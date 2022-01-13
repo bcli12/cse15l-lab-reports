@@ -20,7 +20,7 @@ $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 
 **3. Trying Some Commands**
 * Here is a [list](https://files.fosswire.com/2007/08/fwunixref.pdf) of commands you can run on your local computer or on the remote.
-* To start, try `ls` to list the files in your current working directory. You can also list directories by running `pwd` or change into the home directory with `cd`. For instance:
+* To start, try `ls` to list the files in your directory. You can also print your current directory by running `pwd` or change into the home directory with `cd`. For instance:
 ![Image](commands.png)
 
 **4. Moving Files with `scp`**
@@ -28,23 +28,24 @@ $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 ```
 class ComputerInfo{
     public static void main(String[] args){
-        System.out.println(System.out.getProperty("os.name"));
-        System.out.println(System.out.getProperty("user.name"));
-        System.out.println(System.out.getProperty("user.home"));
-        System.out.println(System.out.getProperty("user.dir));
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("user.dir"));
 }
 ```
-* Now, type the following command, again with `id` replaced by 3 unique letters. Don't forget the `:~/` at the end!
+* Now, type the following command, with `id` replaced by 3 unique letters. Don't forget the `:~/` at the end!
 ```
 scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
-* After typing your password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A different output should appear:
+* After typing your password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A similar output should appear:
 
 ![Image](SCP.png)
-* **NOTICE**: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to allievate this inconvenience in the next steps.
+* **NOTICE**: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to allievate this inconvenience in the next step.
 
 **5. Setting an SSH Key**
-* To replace your password, we will create `ssh` keys with the command `ssh-keygen`, generating a public key, copied to the remote computer, and a private key, stored on your local computer. Below, commands should be run on your computer. **NOTICE**: Windows users will also have to follow different [steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) to generate keys.
+* To replace your password, we will create `ssh` keys with the command `ssh-keygen`, generating a public key, copied to the remote computer, and a private key, stored on your local computer. Below, follow these commands. **NOTICE**: Windows users will also have to follow extra [steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) to generate keys.
+*  `username`, in the directions below, should also be replaced by your local computer username.
 ```
 $ ssh-keygen
 Generating public/private rsa key pair.
@@ -68,7 +69,7 @@ The key's randomart image is:
 |             ..  |
 +----[SHA256]-----+
 ```
-* In the instruction above, `/Users/username/.ssh/id_rsa.` is the location of the private key on your computer and `/Users/username/.ssh/id_rsa.pub.` is the location of the public key.
+* Above, `/Users/username/.ssh/id_rsa.` is the location of the private key on your computer and `/Users/username/.ssh/id_rsa.pub.` is the location of the public key.
 * For the final step, we can make an `.ssh` directory on the remote computer, copying the public key into it. Then, you will no longer be prompted for a password after an `ssh` command.
 ```
 $ ssh cs15lwi22zz@ieng6.ucsd.edu
@@ -77,11 +78,14 @@ $ mkdir .ssh
 $ <logout>
 $ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/authorized_keys
 ```
-* **NOTICE**: `username`, in the above directions, should always be replaced by the your local computer username.
+* `ssh` output should now be:
 
 ![Image](keygen.png)
 
 **6. Optimizing Remote Running**
-* To faciliate the process of running commands, we can use different "shortcuts" and run multiple lines at once.
-* For example to run multiple commands at once, `ssh cs15lwi22@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo" `. The quotes encaptulates the two statements and runs both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
-* We could do `ssh cs15lwi22@ieng6.ucsd.edu "cd" ` as well to run the command and then exit automatically afterwards.
+* To faciliate the process of running commands, we can use different "shortcuts" and run multiple lines at once. For example:
+```
+ssh cs15lwi22@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo" 
+```
+* The quotes above encaptulate the two commands and run both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
+* Another examples is `ssh cs15lwi22@ieng6.ucsd.edu "cd" `. This runs the command on the server and exits automatically afterwards.
