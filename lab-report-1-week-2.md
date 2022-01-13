@@ -5,7 +5,7 @@
 * Install VSCode for your system from the [website](https://code.visualstudio.com/).
 * Once you open the application, you should see a similar screen as the one in the screenshot below.
 
-![Image](VSCodeSetup.png)
+![Image](Welcome.png)
 
 **2. Remotely Connecting**
 
@@ -88,4 +88,6 @@ $ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/author
 ssh cs15lwi22@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo" 
 ```
 * The quotes above encaptulate the two commands and run both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
-* Another examples is `ssh cs15lwi22@ieng6.ucsd.edu "cd" `. This runs the command on the server and exits automatically afterwards.
+* Another examples is `ssh cs15lwi22@ieng6.ucsd.edu "cd" `. This runs the command on the server and exits automatically afterwards. For instance:
+
+![Image](multipleCommands.png)
