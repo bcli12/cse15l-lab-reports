@@ -5,7 +5,7 @@
 * Install VSCode for your system from the [website](https://code.visualstudio.com/).
 * Once you open the application, you should see a similar screen as the one in the screenshot below.
 
-![Image](VSCode.png)
+![Image](VSCodeSetup.png)
 
 **2. Remotely Connecting**
 
@@ -38,7 +38,50 @@ class ComputerInfo{
 ```
 scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
-* After typing the password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A different output should appear:
+* After typing your password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A different output should appear:
 
 ![Image](SCP.png)
-* NOTICE: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to allievate this inconvenience in the next couple steps.
+* **NOTICE**: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to allievate this inconvenience in the next steps.
+
+**5. Setting an SSH Key**
+* To replace your password, we will create `ssh` keys with the command `ssh-keygen`, generating a public key, copied to the remote computer, and a private key, stored on your local computer. Below, commands should be run on your computer. **NOTICE**: Windows users will also have to follow different [steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) to generate keys.
+```
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/username/.ssh/id_rsa): /Users/username/.ssh/id_rsa
+Enter passphrase (empty for no passphrase): (press enter)
+Enter same passphrase again: (press enter again)
+Your identification has been saved in /Users/username/.ssh/id_rsa.
+Your public key has been saved in /Users/username/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:jZaZH6fI8E2I1D35hnvGeBePQ4ELOf2Ge+G0XknoXp0 username@your-device
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|       . . + .   |
+|      . . B o .  |
+|     . . B * +.. |
+|      o S = *.B. |
+|       = = O.*.*+|
+|        + * *.BE+|
+|           +.+.o |
+|             ..  |
++----[SHA256]-----+
+```
+* In the instruction above, `/Users/username/.ssh/id_rsa.` is the location of the private key on your computer and `/Users/username/.ssh/id_rsa.pub.` is the location of the public key.
+* For the final step, we can make an `.ssh` directory on the remote computer, copying the public key into it. Then, you will no longer be prompted for a password after an `ssh` command.
+```
+$ ssh cs15lwi22zz@ieng6.ucsd.edu
+<Enter Password>
+$ mkdir .ssh
+$ <logout>
+$ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/authorized_keys
+```
+* **NOTICE**: `username`, in the above directions, should always be replaced by the your local computer username.
+
+![Image](keygen.png)
+
+**6. Optimizing Remote Running**
+* To faciliate the process of running commands, we can use different "shortcuts" and run multiple lines at once.
+* For example to run multiple commands at once, `ssh cs15lwi22@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo" `. The quotes encaptulates the two statements and runs both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
+* We could do `ssh cs15lwi22@ieng6.ucsd.edu "cd" ` as well to run the command and then exit automatically afterwards.
