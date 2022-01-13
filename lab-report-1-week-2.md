@@ -5,7 +5,7 @@
 * Install VSCode for your system from the [website](https://code.visualstudio.com/).
 * Once you open the application, you should see a similar screen as the one in the screenshot below.
 
-![Image](VSCodeSetup.png)
+![Image](VSCode.png)
 
 **2. Remotely Connecting**
 
@@ -28,10 +28,10 @@ $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 ```
 class ComputerInfo{
     public static void main(String[] args){
-        System.out.println(System.out.getPropery("os.name"));
-        System.out.println(System.out.getPropery("user.name"));
-        System.out.println(System.out.getPropery("user.home"));
-        System.out.println(System.out.getPropery("user.directory"));
+        System.out.println(System.out.getProperty("os.name"));
+        System.out.println(System.out.getProperty("user.name"));
+        System.out.println(System.out.getProperty("user.home"));
+        System.out.println(System.out.getProperty("user.dir));
 }
 ```
 * Now, type the following command, again with `id` replaced by 3 unique letters. Don't forget the `:~/` at the end!
@@ -39,3 +39,6 @@ class ComputerInfo{
 scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
 * After typing the password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A different output should appear:
+
+![Image](SCP.png)
+* NOTICE: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to allievate this inconvenience in the next couple steps.
