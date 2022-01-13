@@ -72,7 +72,7 @@ The key's randomart image is:
 * For the final step, we can make an `.ssh` directory on the remote computer, copying the public key into it. Then, you will no longer be prompted for a password after an `ssh` command.
 ```
 $ ssh cs15lwi22zz@ieng6.ucsd.edu
-<Enter Password>
+$<Enter Password>
 $ mkdir .ssh
 $ <logout>
 $ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/authorized_keys
