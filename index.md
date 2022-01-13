@@ -1,17 +1,10 @@
-# Hello!
+# CSE 15L Lab Reports
 ![Image](https://ucsdnews.ucsd.edu/news_uploads/Resized_Geisel_Library_08.31.jpg)
 
-[Link](https://bcli12.github.io/cse15l-lab-reports/)
-**Some text.**
-```
-More text
-```
-1. One
+**List of Reports:**
 
-2. Two
+- [Lab Report 1](https://bcli12.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
 
-3. Three
 
-4. Four
 
-5. Five
+
