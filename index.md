@@ -1,6 +1,7 @@
-# Hello!**Some text.**
-1.one
+# Hello!
+**Some text.**
+1. One
 
-2.two
+2. Two
 
-3.three
+3. Three
