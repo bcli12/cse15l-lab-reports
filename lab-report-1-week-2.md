@@ -16,7 +16,7 @@ $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 ```
 * Answer `yes` to the following message and enter your UCSD account password. If a similar screen appears, your computer is now a  `client` connected to the CSE Lab's computer, or the `server`:
 ![Image](SSH.png)
-* If you want to log off the server, type `exit` or `logoff`.
+* If you want to log off the server, type `exit` or `logout`.
 
 **3. Trying Some Commands**
 * Here is a [list](https://files.fosswire.com/2007/08/fwunixref.pdf) of commands you can run on your local computer or on the remote.
@@ -28,10 +28,10 @@ $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 ```
 class ComputerInfo{
     public static void main(String[] args){
-        System.out.println("System.out.getPropery("os.name"));
-        System.out.println("System.out.getPropery("user.name"));
-        System.out.println("System.out.getPropery("user.home"));
-        System.out.println("System.out.getPropery("user.directory"));
+        System.out.println(System.out.getPropery("os.name"));
+        System.out.println(System.out.getPropery("user.name"));
+        System.out.println(System.out.getPropery("user.home"));
+        System.out.println(System.out.getPropery("user.directory"));
 }
 ```
 * Now, type the following command, again with `id` replaced by 3 unique letters. Don't forget the `:~/` at the end!
@@ -39,4 +39,3 @@ class ComputerInfo{
 scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
 * After typing the password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A different output should appear:
-![Image](SCP.png)
