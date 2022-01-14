@@ -5,7 +5,7 @@
 * Install VSCode for your system from the [website](https://code.visualstudio.com/).
 * Once you open the application, you should see a similar screen as the one in the screenshot below.
 
-![Image](Welcome.png)
+![Image](screenshots/Welcome.png)
 
 **2. Remotely Connecting**
 
@@ -15,13 +15,13 @@
 $ ssh cs15lwi22<id>@ieng6.ucsd.edu
 ```
 * Answer `yes` to the following message and enter your UCSD account password. If a similar screen appears, your computer is now a  `client` connected to the CSE Lab's computer, or the `server`:
-![Image](SSH.png)
+![Image](screenshots/SSH.png)
 * If you want to log off the server, type `exit` or `logout`.
 
 **3. Trying Some Commands**
 * Here is a [list](https://files.fosswire.com/2007/08/fwunixref.pdf) of commands you can run on your local computer or on the remote.
 * To start, try `ls` to list the files in your directory. You can also print your current directory by running `pwd` or change into the home directory with `cd`. For instance:
-![Image](commands.png)
+![Image](screenshots/commands.png)
 
 **4. Moving Files with `scp`**
 * Exit the remote computer and create a new java file in VSCode called `ComputerInfo.java`. Compile the code with `javac` and run it with `java`. Pay attention to what this outputs:
@@ -40,7 +40,7 @@ scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
 * After typing your password and logging back into the remote computer, run `ls` to see if `ComputerInfo.java` has been successfully copied. Compile and run the code with the commands you used on your local computer. A similar output should appear:
 
-![Image](SCP.png)
+![Image](screenshots/SCP.png)
 * **NOTICE**: Unlike my screen, you will be prompted with a required password entry after using SCP and SSH. We will learn how to alleviate this inconvenience in the next step.
 
 **5. Setting an SSH Key**
@@ -80,7 +80,7 @@ $ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/author
 ```
 * `ssh` output should now be:
 
-![Image](keygen.png)
+![Image](screenshots/keygen.png)
 
 **6. Optimizing Remote Running**
 * To faciliate the process of running commands, we can use different "shortcuts" and run multiple lines at once. For example:
@@ -90,4 +90,4 @@ ssh cs15lwi22<id>@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo"
 * The quotes above encaptulate the two commands and run both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
 * Another example is `ssh cs15lwi22<id>@ieng6.ucsd.edu "cd"`. This runs the command on the server and exits automatically afterwards. For instance:
 
-![Image](multipleCommands.png)
+![Image](screenshots/multipleCommands.png)
