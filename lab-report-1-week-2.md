@@ -34,7 +34,7 @@ class ComputerInfo{
         System.out.println(System.getProperty("user.dir"));
 }
 ```
-* Now, type the following command, with `id` replaced by 3 unique letters. Don't forget the `:~/` at the end!
+* Now, type the following command, with `id` replaced by your 3 unique letters. Don't forget the `:~/` at the end!
 ```
 scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 ```
@@ -50,8 +50,8 @@ scp ComputerInfo.java cs15lwi22<id>@ieng6.ucsd.edu:~/
 $ ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/username/.ssh/id_rsa): /Users/username/.ssh/id_rsa
-Enter passphrase (empty for no passphrase): (press enter)
-Enter same passphrase again: (press enter again)
+Enter passphrase (empty for no passphrase): (press enter/return)
+Enter same passphrase again: (press enter/return again)
 Your identification has been saved in /Users/username/.ssh/id_rsa.
 Your public key has been saved in /Users/username/.ssh/id_rsa.pub.
 The key fingerprint is:
