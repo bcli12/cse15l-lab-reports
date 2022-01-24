@@ -88,6 +88,13 @@ $ scp /Users/username/.ssh/id_rsa.pub cs15lwi22<id>@ieng6.ucsd.edu:~/.ssh/author
 ssh cs15lwi22<id>@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo" 
 ```
 * The quotes above encaptulate the two commands and run both on the server. Without the quotes, java will run on the client instead, because the semi colon separates the commands.
-* Another example is `ssh cs15lwi22<id>@ieng6.ucsd.edu "cd"`. This runs the command on the server and exits automatically afterwards. For instance:
+* Another example is `cd` as shown below. This runs the command on the server and exits automatically afterwards.
+```
+ssh cs15lwi22<id>@ieng6.ucsd.edu "cd"
+```
+* The example below demonstrates if a command lies outside of quotations marks. First `ls` is run on the server, then the user is logged out and the second `ls` is run on the client's computer:
+```
+ssh cs15lwi22<id>@ieng6.ucsd.edu "ls"; ls
+```
 
 ![Image](screenshots/multipleCommands.png)
