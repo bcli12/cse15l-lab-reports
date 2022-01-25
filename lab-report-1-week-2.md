@@ -92,9 +92,11 @@ ssh cs15lwi22<id>@ieng6.ucsd.edu "javac ComputerInfo.java; java ComputerInfo"
 ```
 ssh cs15lwi22<id>@ieng6.ucsd.edu "cd"
 ```
-* The example below demonstrates if a command lies outside of quotations marks. First `ls` is run on the server, then the user is logged out and the second `ls` is run on the client's computer:
+* The example below demonstrates if a command lies outside of quotations marks. First, `ls` is run on the server, then the user is logged out and the second `ls` is run on the client's computer:
 ```
 ssh cs15lwi22<id>@ieng6.ucsd.edu "ls"; ls
 ```
 
 ![Image](screenshots/multipleCommands.png)
+
+* Overall, this will reduce the amount of keystrokes and mouse clicks significantly, each time you login/run commands on the server. For the example above, only one mouse click is used along with 8 key strokes to run the two commands. By running them on separate lines, the same number of clicks and key strokes are used, but it takes me about 5 seconds longer to run everything.
