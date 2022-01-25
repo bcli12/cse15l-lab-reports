@@ -99,4 +99,4 @@ ssh cs15lwi22<id>@ieng6.ucsd.edu "ls"; ls
 
 ![Image](screenshots/multipleCommands.png)
 
-* Overall, this will reduce the amount of keystrokes and mouse clicks significantly, each time you login/run commands on the server. For the example above, only one mouse click is used along with 8 key strokes to run the two commands. By running them on separate lines, the same number of clicks and key strokes are used, but it takes me about 5 seconds longer to run everything.
+* Overall, this will reduce the amount of keystrokes and mouse clicks significantly, each time you login/run commands on the server. For the example above (compiling and running ComputerInfo.java on the server), when typing the commands on seperate lines, I use 3 more keystrokes, and it takes me about 5 seconds longer to run everything.
