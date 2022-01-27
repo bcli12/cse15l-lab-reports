@@ -27,4 +27,9 @@
 
 ![Image](lab-2-screenshots/bug-3.png)
 
-* This link is the 
+* This [link](https://github.com/bcli12/markdown-parse/blob/main/empty-link.md) is a test with an empty link; the file specifically contains ```[]()``` but is shown as an empty file in github.
+
+
+![Image](lab-2-screenshots/bug-3-symptom.png)
+
+* Our group's original test for potential image links checks the character before ```nextOpenBracket```. If ```nextOpenBracket``` was at index 0, the bug, however, a ```IndexOutOfBoundsException``` would be thrown as a result, which is the symptom of the failure inducing input.
