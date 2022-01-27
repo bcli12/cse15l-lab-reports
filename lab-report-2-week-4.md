@@ -25,7 +25,7 @@
 **Bug 3**
 * In lab four, a bug resolved was if there is a nextOpenBracket at index 0. Shown below:
 
-![Image](lab-2-screenshots/bug-3.png)
+![Image](lab-2-screenshots/Bug-3.png)
 
 * This [link](https://github.com/bcli12/markdown-parse/blob/main/empty-link.md) is a test with an empty link; the file specifically contains ```[]()``` but is shown as an empty file in github.
 
