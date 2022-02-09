@@ -23,3 +23,7 @@ After logging in and running ```ls```:
 ![Image](lab-3-screenshots/ls.png)
 
 Output after I run the tests on ```ieng6```:
+
+![Image](lab-3-screenshots/ieng6run.png)
+
+Copying directory and running the tests in one line:
