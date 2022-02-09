@@ -27,3 +27,7 @@ Output after I run the tests on ```ieng6```:
 ![Image](lab-3-screenshots/ieng6run.png)
 
 Copying directory and running the tests in one line:
+
+![Image](lab-3-screenshots/scp-1.png)
+
+![Image](lab-3-screenshots/scp-2.png)
