@@ -53,5 +53,5 @@ And here is the specific part of the JUnit output that shows the snippet test fa
 *  I don't think there's a small code change you can do to account for nested parentheses, brackets, and escaped brackets. We could make a structural change, and instead of reading the entire file, only read an individual line and check for all links within it. Overall, it's then easier to account for cases like nested links since we only need to consider one line at a time.
 
 ## Snippet 3 Code Change
-*  I think a small code change is viable here. For my output, the extra space is added to the arraylist, which can be resolved with ```trim()```, and an if statement that checks for ```\n``` to account for line breaks.
+*  I think a small code change is viable here. For my output, the extra space is added to the arraylist, which can be resolved with ```trim()```, and an if statement that checks for ```\n``` can account for line breaks.
 
