@@ -32,9 +32,9 @@ Here is the corresponding output (the snippet tests are the only failures that a
 
 ![Image](lab-4-screenshots/myrepo-output.png)
 
-Now, I'll show testing the three snippets on the markdown-parse 
-[repository](https://github.com/TheZenMasterz/markdown-parse)\
- we reviewed:
+Now, I'll show testing the three snippets on the reviewed markdown-parse 
+[repository](https://github.com/TheZenMasterz/markdown-parse)
+
 
 Here are the tests in the MarkdownParseTest.java file we reviewed (same tests as in my repo):
 
