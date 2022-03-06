@@ -1,7 +1,7 @@
 # Lab Report 5
 
 1. I found the tests with different results by using the command\
- ```diff mymarkdownparse-week9/results.txt  markdownparse-week9/results.txt```. ```mymarkdownparse-week9``` is a directory with my implementation of ```MarkdownParse.java``` and ```markdownparse-week9``` is a directory that contains the provided implementation. The ```results.txt``` file in each directory contains the corresponding result of running the same ```script.sh``` on one version of MarkdownParse, which called the ```getLinks(String markdown)``` method, with every file in ```test-files/``` being passed in as an argument (afer Files.readString(fileName) is called). I used output redirection with the command ```bash script.sh > results.txt``` to get the output into a file called ```results.txt``` for both directories. The screenshot below shows the some of the result of using ```diff```:
+ ```diff mymarkdownparse-week9/results.txt  markdownparse-week9/results.txt```. ```mymarkdownparse-week9``` is a directory with my implementation of ```MarkdownParse.java``` and ```markdownparse-week9``` is a directory that contains the provided implementation. The ```results.txt``` file in each directory contains the corresponding result of running the same ```script.sh``` on one version of MarkdownParse, which called the ```getLinks(String markdown)``` method, with every file in ```test-files/``` being passed in as an argument (after Files.readString(fileName) is called). I used output redirection with the command ```bash script.sh > results.txt``` to get the output into a file called ```results.txt``` for both directories. The screenshot below shows the some of the result of using ```diff```:
 
  ![Image](lab-5-screenshots/diff.png)
 
@@ -25,7 +25,7 @@
 
  ![Image](lab-5-screenshots/test14fix.png)
 
- * To fix the code, another if statement should be placed after the first if statement, which checks that ```[```, ```]```, ```(```, ```)``` all exists, in the screenshot. This if statement should check that ```nextOpenBracket != 0``` and that ```nextOpenBracket - 1 != "\"```. If there is a ```\``` before ```nextOpenBracket```, then we can set ```currentIndex = closeParen + 1``` and move onto the next possible link in the file.
+ * To fix the code, another if statement should be placed after the first if statement, which checks that ```[```, ```]```, ```(```, ```)``` all exists, in the screenshot. This if statement should check that ```nextOpenBracket``` is not equal to ```0```, and the character at index ```nextOpenBracket - 1``` is not ```\```. If there is a ```\``` before ```nextOpenBracket```, then we can set ```currentIndex = closeParen + 1``` and move onto the next possible link in the file.
 
  3. I'll now explain the second test I chose
 
