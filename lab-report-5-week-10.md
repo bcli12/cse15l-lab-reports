@@ -47,4 +47,4 @@
 
  ![Image](lab-5-screenshots/test201fix.png)
 
- * To fix the code, another if statement should be placed after the first if statement, which checks that ```[```, ```]```, ```(```, ```)``` all exists, in the screenshot. This if statement should check that ```nextOpenParen - 1 = nextCloseBracket```. If this is not true, then once again, we can set ```currentIndex = closeParen + 1``` and move onto the next possible link in the file.
+ * To fix the code, another if statement should be placed after the first if statement, which checks that ```[```, ```]```, ```(```, ```)``` all exists, in the screenshot. This if statement should check that ```nextOpenParen - 1 == nextCloseBracket```. If this is not true, then once again, we can set ```currentIndex = closeParen + 1``` and move onto the next possible link in the file.
