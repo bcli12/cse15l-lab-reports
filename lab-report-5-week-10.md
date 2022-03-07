@@ -1,13 +1,13 @@
 # Lab Report 5
 
 1. I found the tests with different results by using the command\
- ```diff mymarkdownparse-week9/results.txt  markdownparse-week9/results.txt```. ```mymarkdownparse-week9``` is a directory with my implementation of ```MarkdownParse.java``` and ```markdownparse-week9``` is a directory that contains the provided implementation. The ```results.txt``` file in each directory contains the corresponding result of running the same ```script.sh``` on one version of MarkdownParse, which called the ```getLinks(String markdown)``` method, with every file in ```test-files/``` being passed in as an argument (after Files.readString(fileName) is called). I used output redirection with the command ```bash script.sh > results.txt``` to get the output into a file called ```results.txt``` for both directories. The screenshot below shows the some of the result of using ```diff```:
+ ```diff mymarkdownparse-week9/results.txt  markdownparse-week9/results.txt```. ```mymarkdownparse-week9``` is a directory with my implementation of ```MarkdownParse.java``` and ```markdownparse-week9``` is a directory that contains the provided implementation. The ```results.txt``` file in each directory contains the corresponding result of running the same ```script.sh``` on one version of MarkdownParse, which called the ```getLinks(String markdown)``` method, with every file in ```test-files/``` being passed in as an argument (after ```Files.readString(fileName)``` is called). I used output redirection with the command ```bash script.sh > results.txt``` to get the output into a file called ```results.txt``` for both directories. The screenshot below shows the some of the result of using ```diff```:
 
  ![Image](lab-5-screenshots/diff.png)
 
  2. I'll now explain the first test I chose:
 
- * The first test was on line 92 of results.txt:
+ * The first test was on line 92 of ```results.txt```. Here is a screenshot of my own and then the provided implementation's outputs after using ```diff```:
 
  ![Image](lab-5-screenshots/line92.png)
 
@@ -29,7 +29,7 @@
 
  3. I'll now explain the second test I chose
 
- * The second test was on line 230 of ```results.txt```:
+ * The second test was on line 230 of ```results.txt```. Here is a screenshot of my own and then the provided implementation's outputs after using ```diff```:
 
  ![Image](lab-5-screenshots/line230.png)
 
